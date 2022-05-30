@@ -3,3 +3,4 @@ Learn the basics of modern React by solving 140+ interactive coding
 challenges and building eight fun projects.
 
 Course level: Intermediate
+Link: scrimba.com/learn/learnreact
