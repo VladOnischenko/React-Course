@@ -1,0 +1,38 @@
+.card {
+  &__body {
+    margin-bottom: 50px;
+    padding: 0 30px;
+  }
+
+  &__body-about {
+    & h3 {
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 24px;
+      color: #2B283A;
+      margin-bottom: 10px;
+    }
+    & p {
+      font-size: 11px;
+      line-height: 15px;
+      color: #4A4E74;
+      margin-bottom: 22px;
+    }
+  }
+
+  &__body-interests {
+    & h3 {
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 24px;
+      color: #2B283A;
+      margin-bottom: 10px;
+    }
+    & p {
+      font-size: 11px;
+      line-height: 15px;
+      color: #4A4E74;
+      margin-bottom: 22px;
+    }
+  }
+}
