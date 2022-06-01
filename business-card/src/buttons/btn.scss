@@ -4,7 +4,7 @@
   left: 50%;
   transform: translate(-50%, -50%);
 
-  background: #5093E2;
+  background: rgba(196, 6, 29, 0.89);
   padding: 10px 20px;
   border: none;
   border-radius: 15px;
@@ -13,7 +13,7 @@
   font-weight: 600;
   transition: 0.3s;
     &:hover {
-      background: #0762d2;
-      color: rgba(0, 0, 0, 0.69);
+      background: #2e5824;
+      color: rgba(176, 172, 34, 0.79);
     }
 }
