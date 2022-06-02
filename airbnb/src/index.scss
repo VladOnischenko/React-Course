@@ -1,0 +1,26 @@
+body {
+  background: #f0e4cb;
+}
+
+p,div,h1,h2,h3,a,header,section,main,footer {
+  margin: 0;
+}
+
+button{
+  cursor: pointer;
+}
+a {
+  text-decoration: none;
+}
+
+#root {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main {
+  width: 600px;
+  height: 100%;
+  margin: 30px 0;
+}
