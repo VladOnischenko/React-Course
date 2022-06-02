@@ -25,6 +25,9 @@
   align-items: center;
   line-height: 13px;
   color: #918E9B;
+  & > * {
+   padding-right: 3px;
+  }
  }
  &__stats-bold {
   color: #222222;

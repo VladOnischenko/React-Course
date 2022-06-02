@@ -14,7 +14,7 @@ const Card = (props) => {
         <span>{country}</span>
       </div>
       <p className="card__description">{description}</p>
-      <p className="card__price"><span>From {price}</span> / person</p>
+      <p className="card__price"><span>From ${price}</span> / person</p>
     </div>
   );
 };

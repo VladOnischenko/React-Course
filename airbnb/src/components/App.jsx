@@ -17,26 +17,26 @@ function App() {
        <Card
          image={image1}
          description="Life lessons with Katie Zaferes"
-         price="$136"
+         price={136}
          country="USA"
-         rates="5.0"
-         votes="6"
+         rates={5.0}
+         votes={6}
        />
        <Card
          image={image2}
          description="Learn wedding photography"
-         price="$125"
+         price={125}
          country="USA"
-         rates="5.0"
-         votes="30"
+         rates={5.0}
+         votes={30}
        />
        <Card
          image={image3}
          description="Group Mountain Biking"
-         price="$50"
+         price={50}
          country="USA"
-         rates="4.8"
-         votes="2"
+         rates={4.8}
+         votes={2}
        />
      </section>
    </main>
