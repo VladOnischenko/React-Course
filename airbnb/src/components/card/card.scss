@@ -1,0 +1,45 @@
+.cards {
+ font-weight: 300;
+ font-size: 12px;
+ margin: 0 0 30px 0;
+ overflow: scroll;
+ display: flex;
+ justify-content: flex-end;
+ gap: 20px;
+}
+
+.card {
+ max-width: 175px;
+ & > * {
+  padding-bottom: 8px;
+  &:last-child {
+   padding-bottom: 0;
+  }
+ }
+ &__image {
+  width: 100%;
+ }
+
+ &__stats {
+  display: flex;
+  align-items: center;
+  line-height: 13px;
+  color: #918E9B;
+ }
+ &__stats-bold {
+  color: #222222;
+ }
+ &__stats-star{
+  width: 14px;
+  height: 14px;
+ }
+
+ &__description {
+ }
+
+ &__price {
+  & span{
+   font-weight: 600;
+  }
+ }
+}
