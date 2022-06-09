@@ -8,7 +8,7 @@ const Item = (props) => {
       <h2>{title}</h2>
       <p>{description}</p>
       <b>${price}</b>
-      <div className="add-to-cart">+</div>
+      <div className="add-to-cart" onClick={() => props.onAdd(props.item)}>+</div>
     </div>
   );
 };

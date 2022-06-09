@@ -26,10 +26,40 @@ header {
     top: 30px;
     right: 0;
     width: 450px;
-    min-height: 100px;
     background: #d4d3d3;
     box-shadow: 4px 5px 15px -7px #606060;
     z-index: 2;
+    padding: 20px 20px 0;
+    & .delete-icon{
+      color: red;
+      float: right;
+      position: relative;
+      top: -25px;
+      cursor: pointer;
+      transition: color, transform 0.5s linear;
+      &:hover {
+        color: #fb8181;
+        transform: scale(1.5);
+      }
+    }
+    & .item {
+      width: 100%;
+      float: left;
+      margin-bottom: 20px;
+      & h2{
+        font-size: 20px;
+        margin-bottom: 10px;
+      }
+      & p {
+        color: #797979;
+        font-weight: 600;
+      }
+      & img {
+        width: 70px;
+        float: left;
+        margin-right: 20px;
+      }
+    }
   }
   & .shop-cart-button{
     float: right;
@@ -144,4 +174,19 @@ footer {
 .active{
   color: #4c923c;
   transform: scale(1.5);
+}
+
+.empty {
+  & h2 {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+}
+
+.total-price {
+  float: left;
+  width: 100%;
+  font-weight: 600;
+  font-size: 20px;
+  margin-bottom: 20px;
 }
