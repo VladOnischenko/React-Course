@@ -1,9 +1,11 @@
 import React from 'react';
 
-const Categories = () => {
+const Categories = (props) => {
   return (
-    <div>
-      
+    <div className="categories">
+      {props.categories.map( el => (
+        <div key={el.key} onClick={() => props.chooseCategory(el.key)}>{el.name}</div>
+      ))}
     </div>
   );
 };

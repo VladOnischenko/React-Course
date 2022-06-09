@@ -1,10 +1,10 @@
 import React from 'react';
 
 const Item = (props) => {
-  const { title, image, description, price, category } = props.item
+  const { title, image, description, price } = props.item
   return (
     <div className="item">
-      <img src={`./images/` + image} alt=""/>
+      <img src={`./images/` + image} alt={image} onClick={() => props.onShowItem(props.item)}/>
       <h2>{title}</h2>
       <p>{description}</p>
       <b>${price}</b>
