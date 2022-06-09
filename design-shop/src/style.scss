@@ -16,9 +16,29 @@ body {
 }
 
 header {
+  position: relative;
   & .logo{
     font-size: 20px;
     font-weight: 600;
+  }
+  & .shop-cart {
+    position: absolute;
+    top: 30px;
+    right: 0;
+    width: 450px;
+    min-height: 100px;
+    background: #d4d3d3;
+    box-shadow: 4px 5px 15px -7px #606060;
+    z-index: 2;
+  }
+  & .shop-cart-button{
+    float: right;
+    cursor: pointer;
+    transition: color, transform 0.5s linear;
+    &:hover {
+      color: #4c923c;
+      transform: scale(1.5);
+    }
   }
   & ul.nav {
     float: right;
@@ -65,8 +85,63 @@ header {
   }
 }
 
+main {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  & .item {
+    width: 30%;
+    margin-bottom: 50px;
+    background: #F5F5F5;
+    border-radius: 10px 10px 0 0;
+    overflow: hidden;
+    position: relative;
+    padding-bottom: 20px;
+    & img {
+      width: 100%;
+      border-radius: 10px 10px 0 0;
+      transition: transform 0.3s;
+      &:hover{
+        transform: scale(1.05);
+      }
+    }
+  }
+  & .add-to-cart {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    width: 35px;
+    height: 35px;
+    background: red;
+    text-align: center;
+    line-height: 35px;
+    color: #F5F5F5;
+    border-radius: 50%;
+    cursor: pointer;
+    font-weight: 600;
+    transition: transform 0.3s;
+    &:hover {
+      transform: scale(1.5) translateY(-5px);
+    }
+  }
+}
+
+main h2, main p, main b {
+  margin: 10px 20px;
+  color: #333;
+}
+main b {
+  color: #4c923c;
+}
 
 footer {
   margin-top: 100px;
   text-align: center;
+}
+
+.active{
+  color: #4c923c;
+  transform: scale(1.5);
 }
