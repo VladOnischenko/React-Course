@@ -1,0 +1,17 @@
+body {
+    font-family: "Roboto", sans-serif;
+}
+
+label {
+    font-size: .7rem;
+}
+
+input.form-control, input.form-control:focus {
+    background: #f0f0f0;
+}
+
+.error {
+    position: absolute;
+    color: red;
+    font-size: .6rem;
+}
