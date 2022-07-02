@@ -6,12 +6,16 @@ const initialValues = {
   name: '',
   email: '',
   channel: '',
+  comments: '',
+  address: '',
 }
 
 const validationSchema = Yup.object({
   name: Yup.string().required('Name is required'),
   email: Yup.string().email('Invalid email').required('Email is required'),
   channel: Yup.string().required('Channel is required'),
+  comments: Yup.string(),
+  address: Yup.string(),
 })
 
 const onSubmit = values => console.log(values)
@@ -40,6 +44,22 @@ const YoutubeForm = () => {
           <label htmlFor="channel">Channel</label>
           <Field type="text" id="channel" name="channel"/>
           <ErrorMessage name="channel"/>
+        </div>
+
+        <div className="form-control">
+          <label htmlFor="comments">Comments</label>
+          <Field as="textarea" id="comments" name="comments"/>
+          <ErrorMessage name="comments"/>
+        </div>
+
+        <div className="form-control">
+          <label htmlFor="address">Address</label>
+          <Field name="address">
+            {
+              (props) => console.log(props)
+            }
+          </Field>
+          <ErrorMessage  name="address"/>
         </div>
 
         <button type="submit">Submit</button>
