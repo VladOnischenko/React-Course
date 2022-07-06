@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import { Formik, Form, Field, ErrorMessage, FieldArray, FastField } from "formik";
 import * as Yup from 'yup';
 import TextError from "./TextError";
@@ -17,6 +17,20 @@ const initialValues = {
   phNumbers: ['']
 }
 
+const savedValues = {
+  name: 'Vlad',
+  email: 'v@g.com',
+  channel: 'text channel',
+  comments: 'comments',
+  address: 'Ukraine, Kyiv',
+  social: {
+    facebook: '',
+    twitter: '',
+  },
+  phoneNumbers: ['',''],
+  phNumbers: ['']
+}
+
 const validationSchema = Yup.object({
   name: Yup.string().required('Name is required'),
   email: Yup.string().email('Invalid email').required('Email is required'),
@@ -25,7 +39,11 @@ const validationSchema = Yup.object({
   address: Yup.string().required('Address is required'),
 })
 
-const onSubmit = values => console.log(values)
+const onSubmit = (values, onSubmitProps) => {
+  console.log(onSubmitProps)
+  onSubmitProps.setSubmitting(false)
+  onSubmitProps.resetForm()
+}
 
 const validateComments = value => {
   let error
@@ -36,18 +54,23 @@ const validateComments = value => {
 }
 
 const YoutubeForm = () => {
+  const [formValues, setFormValues] = useState(null)
+  useEffect(() => {
+
+  })
+
   return (
     <Formik
-    initialValues={initialValues}
+    initialValues={formValues || initialValues}
     validationSchema={validationSchema}
     onSubmit={onSubmit}
+    enableReinitialize
     // validateOnChange={false} //TODO ->>> validateComments
     // validateOnBlur={false}
     >
 
       {
         formik => {
-          console.log(formik)
           return (
             <Form>
               <div className="form-control">
@@ -142,7 +165,10 @@ const YoutubeForm = () => {
                 channel: true,
                 address: true,
               })}>Visit All</button>
-              <button type="submit">Submit</button>
+              <button type="button" onClick={() => setFormValues(savedValues)}>Load saved data</button>
+              <button type="reset">Reset</button>
+
+              <button type="submit" disabled={!formik.isValid || formik.isSubmitting}>Submit</button>
             </Form>
           )
         }
