@@ -1,10 +1,11 @@
 import './App.css';
+import FormContainer from "./componets/FormContainer";
 
 function App() {
   return (
-   <>
-     text
-   </>
+   <div className="app">
+      <FormContainer />
+   </div>
   );
 }
 
