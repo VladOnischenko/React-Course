@@ -32,7 +32,7 @@ const FormContainer = () => {
     birthDate: null,
   }
   const validationSchema = Yup.object({
-    email: Yup.string().required('Email is required'),
+    email: Yup.string().email("Invalid email format").required('Email is required'),
     description: Yup.string().required('Description is required'),
     selectOption: Yup.string().required('SelectOption is required'),
     radioOption: Yup.string().required('RadioOption is required'),
