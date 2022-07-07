@@ -17,17 +17,25 @@ const FormContainer = () => {
     {key: 'Option 3', value: 'rOption3'},
   ]
 
+  const checkboxOptions = [
+    {key: 'Option 1', value: 'cOption1'},
+    {key: 'Option 2', value: 'cOption2'},
+    {key: 'Option 3', value: 'cOption3'},
+  ]
+
   const initialValues = {
     email: '',
     description: '',
     selectOption: '',
     radioOption: '',
+    checkboxOption: '',
   }
   const validationSchema = Yup.object({
     email: Yup.string().required('Email is required'),
     description: Yup.string().required('Description is required'),
     selectOption: Yup.string().required('SelectOption is required'),
-    radioOption: Yup.string().required('RadioOption is required')
+    radioOption: Yup.string().required('RadioOption is required'),
+    checkboxOption: Yup.array().required('CheckboxOption is required'),
   })
   const onSubmit = values => console.log('Form data',values)
 
@@ -44,6 +52,7 @@ const FormContainer = () => {
             <FormControl control="textarea" name="description" label="Description"/>
             <FormControl control="select" name="selectOption" label="Select a topic" options={dropdownOptions}/>
             <FormControl control="radio" name="radioOption" label="Radio a topic" options={radioOptions}/>
+            <FormControl control="checkbox" name="checkboxOption" label="Checkbox topics" options={checkboxOptions}/>
             <button type="submit">Submit</button>
          </Form>
       }
