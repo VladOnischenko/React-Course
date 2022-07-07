@@ -29,6 +29,7 @@ const FormContainer = () => {
     selectOption: '',
     radioOption: '',
     checkboxOption: '',
+    birthDate: null,
   }
   const validationSchema = Yup.object({
     email: Yup.string().required('Email is required'),
@@ -36,8 +37,12 @@ const FormContainer = () => {
     selectOption: Yup.string().required('SelectOption is required'),
     radioOption: Yup.string().required('RadioOption is required'),
     checkboxOption: Yup.array().required('CheckboxOption is required'),
+    birthDate: Yup.date().required('Date is required').nullable(),
   })
-  const onSubmit = values => console.log('Form data',values)
+  const onSubmit = values => {
+    console.log('Form data',values)
+    console.log("Saved data", JSON.parse(JSON.stringify(values))) //TODO >>>>> Need to add validation for JSON
+  }
 
   return (
     <Formik
@@ -53,6 +58,7 @@ const FormContainer = () => {
             <FormControl control="select" name="selectOption" label="Select a topic" options={dropdownOptions}/>
             <FormControl control="radio" name="radioOption" label="Radio a topic" options={radioOptions}/>
             <FormControl control="checkbox" name="checkboxOption" label="Checkbox topics" options={checkboxOptions}/>
+            <FormControl control="date" name="birthDate" label="Pick a date"/>
             <button type="submit">Submit</button>
          </Form>
       }
