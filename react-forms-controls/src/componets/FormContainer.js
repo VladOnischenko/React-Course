@@ -28,7 +28,7 @@ const FormContainer = () => {
     description: '',
     selectOption: '',
     radioOption: '',
-    checkboxOption: '',
+    checkboxOption: [],
     birthDate: null,
   }
   const validationSchema = Yup.object({
@@ -59,7 +59,7 @@ const FormContainer = () => {
             <FormControl control="radio" name="radioOption" label="Radio a topic" options={radioOptions}/>
             <FormControl control="checkbox" name="checkboxOption" label="Checkbox topics" options={checkboxOptions}/>
             <FormControl control="date" name="birthDate" label="Pick a date"/>
-            <button type="submit">Submit</button>
+            <button type="submit" disabled={!formik.isValid || formik.isSubmitting}>Submit</button>
          </Form>
       }
 

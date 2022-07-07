@@ -7,10 +7,10 @@ import EnrollmentForm from "./componets/EnrollmentForm";
 function App() {
   return (
       <div className="app">
-        {/*<FormContainer />*/}
+        <FormContainer />
         {/*<LoginForm />*/}
         {/*<RegistrationForm />*/}
-        <EnrollmentForm />
+        {/*<EnrollmentForm />*/}
       </div>
   );
 }
